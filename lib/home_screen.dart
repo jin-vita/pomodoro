@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const timerTime = 20;
+  static const timerTime = 1500;
   int totalSeconds = timerTime;
   bool isRunning = false;
   int totalCount = 0;
@@ -49,6 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
       onTick,
     );
     isRunning = true;
+  }
+
+  void restCount() {
+    setState(() {});
+    totalCount = 0;
   }
 
   String format(int seconds) {
@@ -119,12 +124,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'Pomodors',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color:
-                                Theme.of(context).textTheme.displayLarge?.color,
+                        TextButton(
+                          onPressed: restCount,
+                          child: Text(
+                            'Pomodors',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge
+                                  ?.color,
+                            ),
                           ),
                         ),
                         Text(
