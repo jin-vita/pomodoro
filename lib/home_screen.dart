@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           '$totalCount',
                           style: TextStyle(
                             fontSize: 58,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                             color:
                                 Theme.of(context).textTheme.displayLarge?.color,
                           ),
